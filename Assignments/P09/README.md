@@ -1,4 +1,3 @@
-
 ## Assignment 5 - Run Times
 #### Due: 03-02-2021 (Tuesday @ 12:30 p.m.)
 
@@ -106,3 +105,71 @@ for(int j = 0; j < n; j++){
     }
 }
 cout<<count<<endl;
+```
+
+-----
+
+- Count = _____________________
+  
+- Complexity = ________________
+  
+```cpp
+int count = 0;
+int n = 1024;
+int i = n;
+
+while(i>0){
+    for(int j = 0; j < n; j++){
+        count++;
+    }
+    i /= 2;
+    cout<<i<<endl;
+}
+cout<<count<<endl;
+```
+
+-----
+
+- Comparisons = _______________
+  
+- Complexity = ________________
+  
+```cpp
+bool found = 0;
+int n = 1024;
+int i = n;
+
+// assume loaded with random numbers
+// and in ascending order.
+int *A = new int[n];
+
+// Whats most number of comparisons?
+// Whats the complexity?
+found = BinarySearch(A,n);
+
+```
+
+-----
+
+- Count = _____________________
+  
+- Complexity = ________________
+  
+```cpp
+int count = 0;
+int n = 1024;
+
+int i = n;
+while(i>0){
+    cout<<i<<endl;
+    i /= 2;  
+}
+cout<<count<<endl;
+```
+
+-----
+
+### Deliverables
+
+- banner page (you know what it is)
+- print it
