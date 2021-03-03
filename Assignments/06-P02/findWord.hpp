@@ -6,7 +6,7 @@
 #include <vector>
 
 using namespace std;
-
+typedef vector<string> vs;
 
 /**
  * Description:
