@@ -24,7 +24,7 @@
  * https://repl.it/@rugbyprof/getchexample#main.cpp
  */
 
-#include "getch.hpp"
+#include "my_getch.hpp"
 #include "termcolor.hpp"
 #include "timer.hpp"
 #include <fstream>
