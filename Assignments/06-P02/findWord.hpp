@@ -85,6 +85,23 @@ class LINKEDLIST
 
     public:
 
+    /**********************************************************************
+    *                                                                     *
+    * LINKEDLIST                                                          *
+    *                                                                     *
+    * Description:                                                        *
+    *        Node structure for a linked list, created using our struct   *
+    *                                                                     *
+    * Method Variables:                                                   *
+    *        head                                                         *
+    *        tail                                                         *
+    *        size                                                         *
+    *                                                                     *
+    * Use:                                                                *
+    *   Create a linked list within our class                             *
+    *                                                                     *
+    **********************************************************************/
+
         LINKEDLIST()
         {
             head = NULL;
@@ -92,70 +109,111 @@ class LINKEDLIST
             size = 0;
         }
 
-    int getSize()
-    {
-        return size;
-    }
+        /**********************************************************************
+        *                                                                     *
+        * getSize                                                             *
+        *                                                                     *
+        * Description:                                                        *
+        *        Gets the size of the linked list                             *
+        *                                                                     *
+        * Method Variables:                                                   *
+        *        None                                                         *
+        *                                                                     *
+        * Return:                                                             *
+        *   size                                                              *
+        *                                                                     *
+        **********************************************************************/
 
-    void insert(wordNode* word)
-    {
-        if (!head)
+        int getSize()
         {
-            head = tail = word;
+            return size;
         }
 
-        else
+        /**********************************************************************
+        *                                                                     *
+        * insert                                                              *
+        *                                                                     *
+        * Description:                                                        *
+        *        Adds a word to the linked list                               *
+        *                                                                     *
+        * Method Variables:                                                   *
+        *        None                                                         *
+        *                                                                     *
+        * Return:                                                             *
+        *   NULL                                                              *
+        *                                                                     *
+        **********************************************************************/
+
+        void insert(wordNode* word)
         {
-            tail->Next = word;
-            tail = word;
-        }
-
-        size++;
-    }
-
-    void print()
-    {
-        
-        wordNode* current = head;
-        
-        // Start at head and then goto next node.
-        while (current)
-        {
-            std::cout << current->word;   // save word in node
-            std::cout << std::endl;
-            current = current->Next;      // move to next node
-        }
-        
-    }
-
-    vs find(std::string userInput)
-    {
-       std::cout << "Searching for match" << std::endl;
-
-       vs results;
-
-
-       wordNode* current = head;
-        
-       while (current)
-       {
-            std::string found = "";
-
-
-            found = current->word;
-
-            int len = userInput.length();
-
-            if (found.substr(0, len) == userInput)
+            if (!head)
             {
-                results.push_back(found);
+                head = tail = word;
             }
 
-            current = current->Next;
-       }
+            else
+            {
+                tail->Next = word;
+                tail = word;
+            }
 
-        return results;
-    }
+            size++;
+        }
+
+        /**********************************************************************
+        *                                                                     *
+        * print                                                               *
+        *                                                                     *
+        * Description:                                                        *
+        *        Prints the linked list                                       *
+        *                                                                     *
+        * Method Variables:                                                   *
+        *        None                                                         *
+        *                                                                     *
+        * Return:                                                             *
+        *   NULL                                                              *
+        *                                                                     *
+        **********************************************************************/
+
+        void print()
+        {
+        
+            wordNode* current = head;
+        
+            while (current)
+            {
+                std::cout << current->word;   
+                std::cout << std::endl;
+                current = current->Next;      
+            }
+        
+        }
+
+        vs find(std::string userInput)
+        {
+            std::cout << "Searching for match" << std::endl;
+
+           vs results;
+
+
+           wordNode* current = head;
+        
+            while (current)
+                {
+                    std::string found = "";
+
+                   found = current->word;
+
+                    int length = userInput.length();
+
+                    if (found.substr(0, length) == userInput)
+                    {
+                        results.push_back(found);
+                    }
+
+                    current = current->Next;
+                }
+
+            return results;
+        }
 };
-
-
