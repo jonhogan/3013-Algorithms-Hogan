@@ -94,8 +94,102 @@ vector<string> FindAnimals(vector<string> array, string substring) {
 ************************************************************************************
 ***********************************************************************************/
 
-struct NODE
+struct wordNode
 {
-    int data;
-    NODE * next;
+    wordNode* Next;
+    string word;
+
+    wordNode()
+    {
+        Next = NULL;
+        word = "";
+    }
+
 };
+
+
+class LinkedList
+{
+    protected:
+        wordNode* head;
+        wordNode* tail;
+        int size;
+
+
+    public:
+
+        LinkedList()
+        {
+            head = NULL;
+            tail = NULL;
+            size = 0;
+        }
+
+    int getSize()
+    {
+        return size;
+    }
+
+    void inertWord(wordNode* word)
+    {
+        if (!head)
+        {
+            head = tail = word;
+        }
+
+        else
+        {
+            tail->Next = word;
+            tail = word;
+        }
+
+        size++;
+    }
+
+    void Print()
+    {
+        // Always copy head so you don't destroy the list
+        wordNode* Current = head;
+
+        // Standard traversal
+        // Start at head and then goto next node.
+        while (Current) {
+            // loop fails when Current == NULL (which is 0)
+            cout << Current->word;   // print name in node
+            cout << endl;
+            Current = Current->Next;    // goto next node
+        }
+        // End of list points to NULL
+        cout << "NULL" << endl;
+    }
+    vector<string> Find(string typed)
+    {
+       cout << "Looking for matches.\n";
+
+       vector<string> Results;
+
+
+       wordNode* Current = head;
+        
+       while (Current)
+       {
+            string found = "";
+
+
+            found = Current->word;
+
+            int len = typed.length();
+
+            if (found.substr(0, len) == typed)
+            {
+                Results.push_back(found);
+            }
+
+            Current = Current->Next;
+       }
+
+        return Results;
+    }
+};
+
+
