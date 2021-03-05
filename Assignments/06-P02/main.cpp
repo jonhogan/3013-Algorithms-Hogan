@@ -96,12 +96,14 @@ int main() {
         // Find any animals in the array that partially match
         // our substr word
         timer.Start(); // start it
-        matches = FindAnimals(animals, word);
+        matches = dictionary.search(word);
         timer.End(); // end the current timer
-        cout << T.Seconds() << " seconds to read in and print json" << endl;
-        cout << T.MilliSeconds() << " milli to read in and print json" << endl;
+        cout << timer.Seconds() << " seconds to read in and print json" << endl;
+        cout << timer.MilliSeconds() << " milli to read in and print json" << endl;
 
-        if ((int)k != 32) { // if k is not a space print it
+        if ((int)k != 32) 
+        { 
+            // if k is not a space print it
             cout << "Keypressed: " << termcolor::on_yellow << termcolor::blue << k << " = " << (int)k << termcolor::reset << endl;
             cout << "Current Substr: " << termcolor::red << word << termcolor::reset << endl;
             cout << "Animals Found: ";
