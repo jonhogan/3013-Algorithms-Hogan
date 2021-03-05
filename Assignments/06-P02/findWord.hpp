@@ -90,6 +90,7 @@ class LINKEDLIST
     * LINKEDLIST                                                          *
     *                                                                     *
     * Description:                                                        *
+    *        Default Constructor                                          *
     *        Node structure for a linked list, created using our struct   *
     *                                                                     *
     * Method Variables:                                                   *
@@ -107,6 +108,35 @@ class LINKEDLIST
             head = NULL;
             tail = NULL;
             size = 0;
+        }
+
+         /**********************************************************************
+        *                                                                     *
+        * print                                                               *
+        *                                                                     *
+        * Description:                                                        *
+        *        Prints the linked list                                       *
+        *                                                                     *
+        * Method Variables:                                                   *
+        *        None                                                         *
+        *                                                                     *
+        * Return:                                                             *
+        *   NULL                                                              *
+        *                                                                     *
+        **********************************************************************/
+
+        void print()
+        {
+        
+            wordNode* current = head;
+        
+            while (current)
+            {
+                std::cout << current->word;   
+                std::cout << std::endl;
+                current = current->Next;      
+            }
+        
         }
 
         /**********************************************************************
@@ -162,34 +192,20 @@ class LINKEDLIST
 
         /**********************************************************************
         *                                                                     *
-        * print                                                               *
+        * search                                                                *
         *                                                                     *
         * Description:                                                        *
-        *        Prints the linked list                                       *
+        *        searches through the liked list to find a matching word      *
         *                                                                     *
         * Method Variables:                                                   *
-        *        None                                                         *
+        *        vector <string> (vs) results                                 *
         *                                                                     *
         * Return:                                                             *
-        *   NULL                                                              *
+        *   vector <string> (vs) results                                      *
         *                                                                     *
         **********************************************************************/
 
-        void print()
-        {
-        
-            wordNode* current = head;
-        
-            while (current)
-            {
-                std::cout << current->word;   
-                std::cout << std::endl;
-                current = current->Next;      
-            }
-        
-        }
-
-        vs find(std::string userInput)
+        vs search(std::string userInput)
         {
             std::cout << "Searching for match" << std::endl;
 

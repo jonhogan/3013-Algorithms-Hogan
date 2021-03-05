@@ -1,28 +1,12 @@
-/**
- * This program uses a "getch" function which means "get character".
- * However, getch does not print the character to the terminal, it 
- * lets you decide what to do based on what character you are pressing.
- * 
- * You can test which characters are being pressed using thier ascii values. 
- * 
- * An ascii table here should be helpful 
- *      http://www.asciitable.com/
- * 
- * Some integer values for some keys:
- *      LowerCase Letters   = 97(a) -> 122(z)
- *      UpperCase Letters   = 65(A) -> 90(Z)
- *      Enter Key           = 10
- *      Space Bar           = 32
- *      
- *      Arrow Keys          = Have same values as some letters
- *                            so we can't distinguish between 
- *                            the two (in this context).
- * 
- * Code below is a basic example of using a "getch" function along with
- * searching an array of words for partial matches. 
- * 
- * https://repl.it/@rugbyprof/getchexample#main.cpp
- */
+/*************************************************************
+*                                                            *
+*   Author  : Jonathan Hogan                                 *
+*   E-mail  : jon.hogan83@gmail.com                          *
+*   Program : P02                                            *
+*   Course  : Advanced Algorithms 3013                       *
+*   Semester: Spring 2021                                    *
+*                                                            *
+*************************************************************/
 
 #include "getch.hpp"
 #include "termcolor.hpp"
@@ -32,29 +16,57 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
+typedef std::vector<std::string> vs;
 
 
 int main() {
-    char k;                 // holder for character being typed
-    string word = "";       // var to concatenate letters to
-    vector<string> animals; // array of animal names
-    vector<string> matches; // any matches found in vector of animals
+    char k;                // holder for character being typed
+    string word = "";      // var to concatenate letters to
+    vs wordList;           // Location to read words into 
+    vs matches;            // Matches found in the dictionary
+    LINKEDLIST dictionary;
 
-    ofstream fout("temp.txt");
+    ifstream fin;           // File in
+    ofstream fout;          // File out
+    fin.open("dictionary.txt");
 
-    Timer T;   // create a timer
-    T.Start(); // start it
+    Timer timer;   // create a timer
+    timer.Start(); // start it
 
-    animals = LoadAnimals("animal_names.txt");
+    while(!fin.eof())
+    {
+        // Add words to the vector wordList
+        std::string tempWord;
+        fin >> tempWord;
 
-    T.End(); // end the current timer
+        wordList.push_back(tempWord);
 
-    // print out how long it took to load the animals file
-    cout << T.Seconds() << " seconds to read in and print json" << endl;
-    cout << T.MilliSeconds() << " milli to read in and print json" << endl;
+    }
+
+    
+    timer.End(); // end the current timer
+
+    // print out how long it took to load the dictionary file
+    std::cout << "It took " << timer.Seconds() << " seconds to read in the data" << std::endl;
+    cout << "It took " << timer.MilliSeconds() << " milliseconds to read in the data" << std::endl;
 
     cout << "Type keys and watch what happens. Type capital Z to quit." << endl;
+
+    timer.Start();      // start it
+
+    // Add words to the linked list
+    for (int i = 0; i < wordList.size(); i++)
+    {
+        wordNode* temp = new wordNode;
+        temp->word = wordList[i];
+        dictionary.insert(temp);
+    }
+
+    timer.End(); // end the current timer
+
+    // print out how long it took to load the linked list dictionary
+    std::cout << "It took " << timer.Seconds() << " seconds to read in the data" << std::endl;
+    cout << "It took " << timer.MilliSeconds() << " milliseconds to read in the data" << std::endl;
 
     // While capital Z is not typed keep looping
     while ((k = getch()) != 'Z') {
@@ -83,9 +95,9 @@ int main() {
 
         // Find any animals in the array that partially match
         // our substr word
-        T.Start(); // start it
+        timer.Start(); // start it
         matches = FindAnimals(animals, word);
-        T.End(); // end the current timer
+        timer.End(); // end the current timer
         cout << T.Seconds() << " seconds to read in and print json" << endl;
         cout << T.MilliSeconds() << " milli to read in and print json" << endl;
 
