@@ -179,9 +179,7 @@ class LINKEDLIST
             if (!head)
             {
                 head = tail = word;
-            }
-
-            else
+            }else
             {
                 tail->Next = word;
                 tail = word;
