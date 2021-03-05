@@ -73,7 +73,7 @@ int main() {
         
         // Tests for a backspace and if pressed deletes
         // last letter from "word".
-        if ((int)k == 127) {
+        if ((int)k == 127 || k == 8) {
             if (word.size() > 0) {
                 word = word.substr(0, word.size() - 1);
             }
@@ -98,15 +98,15 @@ int main() {
         timer.Start(); // start it
         matches = dictionary.search(word);
         timer.End(); // end the current timer
-        cout << timer.Seconds() << " seconds to read in and print json" << endl;
-        cout << timer.MilliSeconds() << " milli to read in and print json" << endl;
+        cout << timer.Seconds() << " seconds to read in and print" << endl;
+        cout << timer.MilliSeconds() << " milli to read in and print" << endl;
 
         if ((int)k != 32) 
         { 
             // if k is not a space print it
             cout << "Keypressed: " << termcolor::on_yellow << termcolor::blue << k << " = " << (int)k << termcolor::reset << endl;
             cout << "Current Substr: " << termcolor::red << word << termcolor::reset << endl;
-            cout << "Animals Found: ";
+            cout << "Word found: ";
             cout << termcolor::green;
             // This prints out all found matches
             for (int i = 0; i < matches.size(); i++) {
