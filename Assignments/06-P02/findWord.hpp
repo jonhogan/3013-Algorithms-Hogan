@@ -110,20 +110,20 @@ class LINKEDLIST
             size = 0;
         }
 
-         /**********************************************************************
-        *                                                                     *
-        * print                                                               *
-        *                                                                     *
-        * Description:                                                        *
-        *        Prints the linked list                                       *
-        *                                                                     *
-        * Method Variables:                                                   *
-        *        None                                                         *
-        *                                                                     *
-        * Return:                                                             *
-        *   NULL                                                              *
-        *                                                                     *
-        **********************************************************************/
+        /*******************************************************************
+        *                                                                  *
+        * print                                                            *
+        *                                                                  *
+        * Description:                                                     *
+        *        Prints the linked list                                    *
+        *                                                                  *
+        * Method Variables:                                                *
+        *        None                                                      *
+        *                                                                  *
+        * Return:                                                          *
+        *   NULL                                                           *
+        *                                                                  *
+        *******************************************************************/
 
         void print()
         {
@@ -139,40 +139,40 @@ class LINKEDLIST
         
         }
 
-        /**********************************************************************
-        *                                                                     *
-        * getSize                                                             *
-        *                                                                     *
-        * Description:                                                        *
-        *        Gets the size of the linked list                             *
-        *                                                                     *
-        * Method Variables:                                                   *
-        *        None                                                         *
-        *                                                                     *
-        * Return:                                                             *
-        *   size                                                              *
-        *                                                                     *
-        **********************************************************************/
+        /*******************************************************************
+        *                                                                  *
+        * getSize                                                          *
+        *                                                                  *
+        * Description:                                                     *
+        *        Gets the size of the linked list                          *
+        *                                                                  *
+        * Method Variables:                                                *
+        *        None                                                      *
+        *                                                                  *
+        * Return:                                                          *
+        *   size                                                           *
+        *                                                                  *
+        *******************************************************************/
 
         int getSize()
         {
             return size;
         }
 
-        /**********************************************************************
-        *                                                                     *
-        * insert                                                              *
-        *                                                                     *
-        * Description:                                                        *
-        *        Adds a word to the linked list                               *
-        *                                                                     *
-        * Method Variables:                                                   *
-        *        None                                                         *
-        *                                                                     *
-        * Return:                                                             *
-        *   NULL                                                              *
-        *                                                                     *
-        **********************************************************************/
+        /*******************************************************************
+        *                                                                  *
+        * insert                                                           *
+        *                                                                  *
+        * Description:                                                     *
+        *        Adds a word to the linked list                            *
+        *                                                                  *
+        * Method Variables:                                                *
+        *        None                                                      *
+        *                                                                  *
+        * Return:                                                          *
+        *   NULL                                                           *
+        *                                                                  *
+        *******************************************************************/
 
         void insert(wordNode* word)
         {
@@ -188,20 +188,20 @@ class LINKEDLIST
             size++;
         }
 
-        /**********************************************************************
-        *                                                                     *
-        * search                                                                *
-        *                                                                     *
-        * Description:                                                        *
-        *        searches through the liked list to find a matching word      *
-        *                                                                     *
-        * Method Variables:                                                   *
-        *        vector <string> (vs) results                                 *
-        *                                                                     *
-        * Return:                                                             *
-        *   vector <string> (vs) results                                      *
-        *                                                                     *
-        **********************************************************************/
+        /*******************************************************************
+        *                                                                  *
+        * search                                                           *
+        *                                                                  *
+        * Description:                                                     *
+        *        searches through the liked list to find a matching word   *
+        *                                                                  *
+        * Method Variables:                                                *
+        *        vector <string> (vs) results                              *
+        *                                                                  *
+        * Return:                                                          *
+        *   vector <string> (vs) results                                   *
+        *                                                                  *
+        *******************************************************************/
 
         vs search(std::string userInput)
         {
