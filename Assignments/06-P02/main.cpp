@@ -19,8 +19,7 @@
 typedef std::vector<std::string> vs;
 
 
-int main()
-{
+int main() {
     char k;                // holder for character being typed
     string word = "";      // var to concatenate letters to
     vs wordList;           // Location to read words into 
@@ -70,8 +69,7 @@ int main()
     cout << "It took " << timer.MilliSeconds() << " milliseconds to read in the data" << std::endl;
 
     // While capital Z is not typed keep looping
-    while ((k = getch()) != 'Z')
-    {
+    while ((k = getch()) != 'Z') {
         
         // Tests for a backspace and if pressed deletes
         // last letter from "word".
@@ -79,8 +77,7 @@ int main()
             if (word.size() > 0) {
                 word = word.substr(0, word.size() - 1);
             }
-        }else
-        {
+        } else {
             // Make sure a letter was pressed and only letter
             if (!isalpha(k)) {
                 cout << "Letters only!" << endl;
@@ -104,7 +101,10 @@ int main()
         cout << timer.Seconds() << " seconds to read in and print" << endl;
         cout << timer.MilliSeconds() << " milli to read in and print" << endl;
 
-        if ((int)k != 32) 
+        if (word == "")
+        {
+          // If "word" is empty, do not print the dictionary
+        }else if ((int)k != 32) 
         { 
             // if k is not a space print it
             cout << "Keypressed: " << termcolor::on_yellow << termcolor::blue << k << " = " << (int)k << termcolor::reset << endl;
