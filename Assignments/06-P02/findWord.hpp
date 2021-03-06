@@ -1,9 +1,9 @@
-#include "getch.hpp"
-#include "termcolor.hpp"
-#include "timer.hpp"
+#pragma once
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <string>
+
 
 typedef std::vector<std::string> vs;
 
@@ -43,7 +43,7 @@ typedef std::vector<std::string> vs;
 struct wordNode
 {
     wordNode* Next;
-    string word;
+    std::string word;
 
     wordNode()
     {
