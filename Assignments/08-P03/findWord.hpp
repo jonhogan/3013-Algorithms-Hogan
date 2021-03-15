@@ -42,17 +42,13 @@ typedef std::vector<std::string> vs;
 
 struct wordNode
 {
-    wordNode* lChild;
-    wordNode* rChild;
     std::string word;
     std::string def;
 
-    wordNode(std::string w, std::string d)
+    wordNode()
     {
-        lChild = NULL;
-        rChild = NULL;
-        word = w;
-        def = d;
+        word = "";
+        def = "";
     }
 
 };
@@ -82,36 +78,64 @@ struct wordNode
 class WordTree
 {
     protected:
-        wordNode* m_rChild;
-        wordNode* m_lChild;
-        //int size;
-
+        wordNode* m_dictionary;
+        int m_currentSize;
+        float m_ratio;
 
     public:
 
-    /**********************************************************************
-    *                                                                     *
-    * WordTree                                                            *
-    *                                                                     *
-    * Description:                                                        *
-    *        Default Constructor                                          *
-    *        Node structure for a linked list, created using our struct   *
-    *                                                                     *
-    * Method Variables:                                                   *
-    *        lChild                                                       *
-    *        m_rChild                                                     *
-    *        size                                                         *
-    *                                                                     *
-    * Use:                                                                *
-    *   Create a linked list within our class                             *
-    *                                                                     *
-    **********************************************************************/
+        /**********************************************************************
+        *                                                                     *
+        * WordTree                                                            *
+        *                                                                     *
+        * Description:                                                        *
+        *        Default Constructor                                          *
+        *        Array based binary tree                                      *
+        *                                                                     *
+        * Method Variables:                                                   *
+        *        m_currentSize                                                *
+        *        m_dictionary                                                 *
+        *        m_ratio                                                      *
+        *                                                                     *
+        * Use:                                                                *
+        *   Create an array based binary tree                                 *
+        *                                                                     *
+        **********************************************************************/
 
         WordTree()
         {
-            m_lChild = NULL;
-            m_rChild = NULL;
-            //size = 0;
+          m_currentSize = 10;
+          m_dictionary = new wordNode[m_currentSize];
+          m_ratio = 1;
+        }
+
+
+        /**********************************************************************
+        * GrowTree                                                            *
+        *                                                                     *
+        * Description:                                                        *
+        *         If the binary tree is full, grow it                         *
+        *                                                                     *
+        * Params:                                                             *
+        *         NULL                                                        *
+        *                                                                     *
+        * Returns:                                                            *
+        *         NULL                                                        *
+        **********************************************************************/
+
+        void GrowTree()
+        {
+            int growSize = m_currentSize * 2;  // Double the size of the stack
+            wordNode* B = new wordNode[growSize];      // New memory
+
+            for (int i = 0; i < m_currentSize; i++) // Copy data to new stack
+            {
+                B[i] = m_dictionary[i];
+            }
+
+            m_currentSize = growSize;          // Set current size to the new size
+            delete[] m_dictionary;                      // Delete old array
+            m_dictionary = B;                           // Reset the pointer
         }
 
         /*******************************************************************
@@ -128,7 +152,7 @@ class WordTree
         *   NULL                                                           *
         *                                                                  *
         *******************************************************************/
-/*
+        /*
         void print()
         {
         
@@ -142,7 +166,7 @@ class WordTree
             }
         
         }
-*/
+        */
         /*******************************************************************
         *                                                                  *
         * getSize                                                          *
@@ -206,7 +230,7 @@ class WordTree
         *   vector <string> (vs) results                                   *
         *                                                                  *
         *******************************************************************/
-/*
+    /*
         vs search(std::string userInput)
         {
             std::cout << "Searching for match" << std::endl;
@@ -233,5 +257,6 @@ class WordTree
                 }
 
             return results;
-        }*/
+        }
+    */
 };
