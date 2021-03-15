@@ -42,13 +42,17 @@ typedef std::vector<std::string> vs;
 
 struct wordNode
 {
-    wordNode* Next;
+    wordNode* lChild;
+    wordNode* rChild;
     std::string word;
+    std::string def;
 
-    wordNode()
+    wordNode(std::string w, std::string d)
     {
-        Next = NULL;
-        word = "";
+        lChild = NULL;
+        rChild = NULL;
+        word = w;
+        def = d;
     }
 
 };
@@ -57,7 +61,7 @@ struct wordNode
 /**********************************************************************
 ***********************************************************************
 *                                                                     *
-* LINKEDLIST                                                          *
+* WordTree                                                            *
 *                                                                     *
 * Description:                                                        *
 *        Node structure for a linked list                             *
@@ -66,7 +70,7 @@ struct wordNode
 *        None                                                         *
 *                                                                     *
 * Public Methods:                                                     *
-*        LINKEDLIST                                                   *
+*        WordTree                                                     *
 *        getSize                                                      *
 *        insert                                                       *
 *        print                                                        *
@@ -75,27 +79,27 @@ struct wordNode
 **********************************************************************/
 
 
-class LINKEDLIST
+class WordTree
 {
     protected:
-        wordNode* head;
-        wordNode* tail;
-        int size;
+        wordNode* m_rChild;
+        wordNode* m_lChild;
+        //int size;
 
 
     public:
 
     /**********************************************************************
     *                                                                     *
-    * LINKEDLIST                                                          *
+    * WordTree                                                            *
     *                                                                     *
     * Description:                                                        *
     *        Default Constructor                                          *
     *        Node structure for a linked list, created using our struct   *
     *                                                                     *
     * Method Variables:                                                   *
-    *        head                                                         *
-    *        tail                                                         *
+    *        lChild                                                       *
+    *        m_rChild                                                     *
     *        size                                                         *
     *                                                                     *
     * Use:                                                                *
@@ -103,11 +107,11 @@ class LINKEDLIST
     *                                                                     *
     **********************************************************************/
 
-        LINKEDLIST()
+        WordTree()
         {
-            head = NULL;
-            tail = NULL;
-            size = 0;
+            m_lChild = NULL;
+            m_rChild = NULL;
+            //size = 0;
         }
 
         /*******************************************************************
@@ -115,7 +119,7 @@ class LINKEDLIST
         * print                                                            *
         *                                                                  *
         * Description:                                                     *
-        *        Prints the linked list                                    *
+        *        Prints the BST                                            *
         *                                                                  *
         * Method Variables:                                                *
         *        None                                                      *
@@ -124,11 +128,11 @@ class LINKEDLIST
         *   NULL                                                           *
         *                                                                  *
         *******************************************************************/
-
+/*
         void print()
         {
         
-            wordNode* current = head;
+            wordNode* current = m_lChild;
         
             while (current)
             {
@@ -138,7 +142,7 @@ class LINKEDLIST
             }
         
         }
-
+*/
         /*******************************************************************
         *                                                                  *
         * getSize                                                          *
@@ -153,12 +157,12 @@ class LINKEDLIST
         *   size                                                           *
         *                                                                  *
         *******************************************************************/
-
+/*
         int getSize()
         {
             return size;
         }
-
+*/
         /*******************************************************************
         *                                                                  *
         * insert                                                           *
@@ -173,21 +177,21 @@ class LINKEDLIST
         *   NULL                                                           *
         *                                                                  *
         *******************************************************************/
-
+/*
         void insert(wordNode* word)
         {
-            if (!head)
+            if (!m_lChild)
             {
-                head = tail = word;
+                m_lChild = m_rChild = word;
             }else
             {
-                tail->Next = word;
-                tail = word;
+                m_rChild->Next = word;
+                m_rChild = word;
             }
 
             size++;
         }
-
+*/
         /*******************************************************************
         *                                                                  *
         * search                                                           *
@@ -202,7 +206,7 @@ class LINKEDLIST
         *   vector <string> (vs) results                                   *
         *                                                                  *
         *******************************************************************/
-
+/*
         vs search(std::string userInput)
         {
             std::cout << "Searching for match" << std::endl;
@@ -210,7 +214,7 @@ class LINKEDLIST
            vs results;
 
 
-           wordNode* current = head;
+           wordNode* current = m_lChild;
         
             while (current)
                 {
@@ -229,5 +233,5 @@ class LINKEDLIST
                 }
 
             return results;
-        }
+        }*/
 };
