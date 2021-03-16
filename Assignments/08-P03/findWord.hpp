@@ -218,7 +218,7 @@ class WordTree
         * print                                                       *
         *                                                             *
         * Description:                                                *
-        *        Prints the WordTree                                       *
+        *        Prints the WordTree                                  *
         *                                                             *
         * Method Variables:                                           *
         *        None                                                 *
