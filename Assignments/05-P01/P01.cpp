@@ -49,7 +49,7 @@ public:
     * ArrayStack
     *
     * Description:
-    *         Default constuctor of the Array Stack
+    *         Default constructor of the Array Stack
     *
     * Params:
     *         NULL
@@ -71,7 +71,7 @@ public:
     * ArrayStack
     *
     * Description:
-    *         Constuctor of the Array Stack using uder defined
+    *         Constructor of the Array Stack using user defined
     *         parameters
     *
     * Params:
@@ -374,7 +374,7 @@ int main() {
     fout << "----------------------------------------------------------------------\n"
         << "Program 1 - Resizing the Stack\n"
         << "CMPS 3013\n" << endl
-        << "Jonasthan Hogan\n\n"
+        << "Jonathan Hogan\n\n"
         << "======================================================================\n";
 
     fout << setw(4) << "" << "Max Stack Size: " << Stack.GetMaxSize() << endl
