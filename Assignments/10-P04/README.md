@@ -18,7 +18,7 @@
 |  #  | File                           | Description                              |
 | :-: | ------------------------------ | ---------------------------------------- |
 |  1  | [main.cpp](main.cpp)           | The main cpp file.                       |
-|  2  | [Banner](Banner)               | Assignment Banner                    |
+|  2  | [Banner](BANNER.txt)           | Assignment Banner                        |
 |  3  | [timer.hpp](timer.hpp)         | Timer helper class                       |
 |  4  | [getch.hpp](getch.hpp)         | Get character, without printing it .     |
 |  5  | [Dictionary](dictionary.txt)   | List of words, and some I'm not sure a really words|
