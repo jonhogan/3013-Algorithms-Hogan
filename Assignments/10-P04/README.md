@@ -1,18 +1,17 @@
 ## Program 4 - Processing in Trie Tree Time
 
-### Loic Konan
+### Jonathan Hogan
 
 #### Description
 
-- This program will read in a dictionary file and store it in a Trie Tree.
+- This program will read in a dictionary file and store it in a TrieTree.
 
-  - Suggestions will start after **_1 character_** is typed.
-  - Only the top **_10 suggestions_** will be printed along with the total number of matching words.
-  - Matching suggestions will ONLY be words that match the **substring** starting from **_position zero_**.
-  - As typing, the time it takes to find suggestions will be displayed in **_seconds_** with some **_color effects_**.
+  - Will start looking for suggestions upon the first entered character.
+  - Will show the total number of matched words, and display the first ten.
+  - Matching suggestions will start at the first character in the string
+  - The time it takes to find suggestions will be displayed in seconds
 
-- We are doing this with the knowledge that this is slow, and we plan on applying our "lookup" code <br>
-  to other backend data structures with better performance.
+
 
 ### Files
 
@@ -26,9 +25,3 @@
 |  6  | [termcolor.hpp](termcolor.hpp) | Class to color text                      |
 |  7  |[Replit to P04](https://replit.com/@JonHogan/P04#trie.hpp)| Replit link to project|
 
-### Instructions
-
-- $ ./main.cpp
-- $ ./dictionary.txt
-- $  Z to terminate the program.
-  
