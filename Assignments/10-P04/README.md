@@ -24,3 +24,8 @@
 |  5  | [Dictionary](dictionary.txt)   | List of words, and some I'm not sure a really words|
 |  6  | [termcolor.hpp](termcolor.hpp) | Class to color text                      |
 |  7  |[Replit to P04](https://replit.com/@JonHogan/P04#trie.hpp)| Replit link to project|
+
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 97c43485fda5e635a912c0291e8130a2b7bf6d84
