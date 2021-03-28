@@ -16,7 +16,6 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include <algorithm>
 #include "timer.hpp"
 #include "trie.hpp"
 
