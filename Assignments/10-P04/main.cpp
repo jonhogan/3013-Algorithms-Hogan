@@ -113,7 +113,7 @@ int main()
 
         if ((int)k != 32)
         { // if k is not a space print it
-            std::cout << "Keypressed: " << termcolor::on_yellow << k << " = " << (int)k
+            std::cout << "Keypressed: " << termcolor::on_yellow << termcolor::blue << k << " = " << (int)k
                       << termcolor::reset << std::endl;
 
             std::cout << "Current Substr: " << termcolor::red << word << termcolor::reset << std::endl;
@@ -127,14 +127,14 @@ int main()
                 for (int i = 0; i < 10; i++)
                 {
                     topResults[i] = matches[i];
-                    cout << topResults[i] << " ";
+                    std::cout << topResults[i] << " ";
                 }
             }else
             {
                 for (int i = 0; i < matches.size(); i++)
                 {
                     topResults[i] = matches[i];
-                    cout << topResults[i] << " ";
+                    std::cout << topResults[i] << " ";
                 }
             }
 
