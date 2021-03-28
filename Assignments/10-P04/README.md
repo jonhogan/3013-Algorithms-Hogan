@@ -1,4 +1,4 @@
-## Program 4 - Processing in Trie Tree Time
+## Program 4 - Processing Time using a TrieTree
 
 ### Jonathan Hogan
 
