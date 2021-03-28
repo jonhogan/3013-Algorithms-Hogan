@@ -32,12 +32,12 @@
 struct TrieNode
 {
     bool isLeaf;
-    string word;
+    std::string word;
     TrieNode* character[CHAR_SIZE];
 
     TrieNode()
     {
-        isLeaf = true;
+        isLeaf = false;
         word = "";
 
         for (int i = 0; i < CHAR_SIZE; i++)
