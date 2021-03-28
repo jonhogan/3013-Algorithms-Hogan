@@ -23,5 +23,5 @@
 |  4  | [getch.hpp](getch.hpp)         | Get character, without printing it .     |
 |  5  | [Dictionary](dictionary.txt)   | List of words, and some I'm not sure a really words|
 |  6  | [termcolor.hpp](termcolor.hpp) | Class to color text                      |
-|  7  |[Replit to P04](https://replit.com/@JonHogan/P04#trie.hpp)| Replit link to project|
+|  7  | [Replit to P04](https://replit.com/@JonHogan/P04#trie.hpp)| Replit link to project|
 
