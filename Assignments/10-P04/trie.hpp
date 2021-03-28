@@ -172,8 +172,8 @@ public:
     *   Description:                                                                *
     *       Receives the t_data or getched data from the user and compares it to    *
     *       the dictionary data to find matches. Calls the private/protected        *
-    *                                                                               *
     *       Find method.                                                            *
+    *                                                                               *
     *   Params:                                                                     *
     *       string t_data                                                           *
     *                                                                               *
