@@ -3,10 +3,6 @@
 #include <string>
 #include <vector>
 
-// Defining the character size of 26 for the alphabet
-#define CHAR_SIZE 26
-
-
 /*****************************************************************************
 ******************************************************************************
 **                                                                          **
@@ -33,14 +29,14 @@ struct TrieNode
 {
     bool isLeaf;
     std::string word;
-    TrieNode* character[CHAR_SIZE];
+    TrieNode* character[26];  // 26 for the number of letters in the alphabet
 
     TrieNode()
     {
         isLeaf = false;
         word = "";
 
-        for (int i = 0; i < CHAR_SIZE; i++)
+        for (int i = 0; i < 26; i++)
         {
             this -> character[i] = NULL;
         }
