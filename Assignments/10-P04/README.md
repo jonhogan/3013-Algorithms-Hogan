@@ -25,3 +25,4 @@
 |  6  | [termcolor.hpp](termcolor.hpp) | Class to color text                      |
 |  7  | [Replit to P04](https://replit.com/@JonHogan/P04#trie.hpp)| Replit link to project|
 
+<imgsrc = "SC0.png">
