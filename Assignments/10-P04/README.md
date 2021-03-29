@@ -26,3 +26,6 @@
 |  7  | [Replit to P04](https://replit.com/@JonHogan/P04#trie.hpp)| Replit link to project|
 
 <img src = "SC0.png">
+<img src = "SC1.png">
+<img src = "SC2.png">
+<img src = "SC3.png">
